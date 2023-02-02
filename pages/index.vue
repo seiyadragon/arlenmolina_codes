@@ -1,12 +1,13 @@
 
 
 <template>
-
+    <head>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    </head>
     <main class="main_0">
       <div class="main_div">
         <Header />
         <Contact />
-        
       </div>
     </main>
 
@@ -26,6 +27,7 @@
         font-size: 100%;
         vertical-align: baseline;
         background: transparent;
+        font-family: 'Ubuntu';
     }
     
     ::-webkit-scrollbar {
