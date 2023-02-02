@@ -29,11 +29,14 @@
         justify-self: right;
         margin-left: auto;
         border-top-left-radius: 32px;
+
+        border-top-right-radius: 3px;
     }
 
     .contact {
         border-top-right-radius: 32px;
 
+        border-top-left-radius: 3px;
     }
 
     .contact, .question {

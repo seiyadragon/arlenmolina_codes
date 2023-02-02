@@ -25,7 +25,6 @@ import TextMessage from './TextMessage.vue'
 
 </script>
 
-
 <template>
 
     <div>
@@ -39,7 +38,7 @@ import TextMessage from './TextMessage.vue'
         </TextMessage>
         <TextMessage :isResponse="true" class="message">
             <div class="link-container">
-                <NuxtLink href="/contact">Contact me today!</NuxtLink>
+                <NuxtLink href="/contact">Make it happen!</NuxtLink>
             </div>
         </TextMessage>
     </div>
@@ -79,7 +78,7 @@ import TextMessage from './TextMessage.vue'
 
     .message {
         h1 {
-            font-size: 32px;
+            font-size: 24px;
             text-align: center;
         }
 
