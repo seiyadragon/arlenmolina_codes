@@ -1,4 +1,5 @@
 
+
 <script lang="ts">
 
     export default {
@@ -11,16 +12,16 @@
 
     <div>
         <TextMessage :isResponse="false" class="message">
-            <h1>Need a website?</h1>
+            <h1>What about you?</h1>
             <p>{{ question }}</p>
         </TextMessage>
         <TextMessage :isResponse="true" class="message">
-            <h1>Get in Touch!</h1>
+            <h1>A little about me!</h1>
             <p>{{ response }}</p>
         </TextMessage>
         <TextMessage :isResponse="true" class="message">
             <div class="link-container">
-                <NuxtLink href="/contact">Make it happen!</NuxtLink>
+                <NuxtLink href="/about">Learn More!</NuxtLink>
             </div>
         </TextMessage>
     </div>
@@ -33,6 +34,19 @@
     $border: darken($background, 10%);
 
     $text: rgb(54, 54, 54);
+
+    .message {
+        h1 {
+            font-size: 24px;
+            text-align: center;
+        }
+
+        p {
+            padding-left: 32px;
+            padding-right: 32px;
+            font-size: 18px;
+        }
+    }
 
     .link-container {
         display: flex;
@@ -55,19 +69,6 @@
             &:hover {
                 box-shadow: 12px 12px $border;
             }
-        }
-    }
-
-    .message {
-        h1 {
-            font-size: 24px;
-            text-align: center;
-        }
-
-        p {
-            padding-left: 32px;
-            padding-right: 32px;
-            font-size: 18px;
         }
     }
 
