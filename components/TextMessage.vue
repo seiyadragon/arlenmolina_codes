@@ -12,7 +12,7 @@
 
     <section :class="isResponse ? 'contact' : 'question'">
         <div class="body">
-            <slot />
+            <slot class="slot"/>
         </div>
     </section>
 

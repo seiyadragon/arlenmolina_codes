@@ -9,7 +9,7 @@
 
 <template>
 
-    <div>
+    <TextMessageContainer>
         <TextMessage :isResponse="false" class="message">
             <h1>Need a website?</h1>
             <p>{{ question }}</p>
@@ -23,52 +23,6 @@
                 <NuxtLink href="/contact">Make it happen!</NuxtLink>
             </div>
         </TextMessage>
-    </div>
+    </TextMessageContainer>
 
 </template>
-
-<style lang="scss" scoped>
-
-    $background: rgba(214, 84, 9, 0.8);
-    $border: darken($background, 10%);
-
-    $text: rgb(54, 54, 54);
-
-    .link-container {
-        display: flex;
-
-        margin-left: 24px;
-        margin-right: 24px;
-
-        a {
-            margin-left: auto;
-            margin-right: auto;
-
-            font-size: 36px;
-            text-decoration: none;
-            color: rgb(99, 0, 102);
-            box-shadow: 4px 4px $border;
-            padding: 2px;
-
-            transition: box-shadow 1s ease-in-out;
-
-            &:hover {
-                box-shadow: 12px 12px $border;
-            }
-        }
-    }
-
-    .message {
-        h1 {
-            font-size: 24px;
-            text-align: center;
-        }
-
-        p {
-            padding-left: 32px;
-            padding-right: 32px;
-            font-size: 18px;
-        }
-    }
-
-</style>

@@ -29,11 +29,14 @@
             Alright! Tell me a little about yourself, your experience,
             projects you've worked on, etc...
           "
-          response="
+          response-one="
             I'm a programmer with several years of experience. I started
             at the age of 14, around the time I was in 8th grade. I really
             liked to play videogames, and decided to make some. And that's 
-            how my story begins. Since that time I've worked on many web
+            how my story begins.
+          "
+          response-two="
+            Since that time I've worked on many web
             projects, both front-end and back-end. I am profficient in several
             programming languages and frameworks, as well as SEO, and social
             media management. Fun fact, I was born in Cuba y tambien se hablar 

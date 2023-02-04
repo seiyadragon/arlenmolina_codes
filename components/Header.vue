@@ -9,17 +9,7 @@
                 <h1>Arlen Molina</h1>
                 <h2>Web Developer</h2>
             </div>
-            <div class="links">
-                <NuxtLink href="https://www.linkedin.com/in/arlen-molina-423159183/">
-                    <Icon name="uil:linkedin" />
-                </NuxtLink>
-                <NuxtLink href="https://github.com/seiyadragon">
-                    <Icon name="uil:github" />
-                </NuxtLink>
-                <NuxtLink href="https://twitter.com/arlenmolina101">
-                    <Icon name="uil:twitter" />
-                </NuxtLink>
-            </div>
+            <Links />
         </section>
     </header>
 
@@ -40,40 +30,36 @@
         border-bottom: 8px solid $border;
         border-bottom-right-radius: 32px;
         border-bottom-left-radius: 32px;
+        position: sticky;
+        top: 0;
+        z-index: 99;
         
         .profile {
             height: 64px;
             display: flex;
+            padding-left: 4px;
+            padding-right: 4px;
 
-            img, .name {
-                height: 48px;
+            img {
                 border-radius: 100%;
+                width: 48px;
                 padding: 8px;
+                padding-left: 4px;
+                padding-right: 4px;
+            }
+            
+            .name {
+                height: 48px;
+                padding: 0px;
+
+                padding-top: 8px;
+                padding-bottom: 8px;
+
+                overflow-y: hidden;
 
                 h1 {
                     font-size: 24px;
                     margin-bottom: 2px;
-                }
-            }
-
-            .links {
-                font-size: 32px;
-                display: flex;
-                justify-self: end;
-                margin-left: auto;
-                margin-right: 8px;
-                align-self: center;
-
-                a {
-                    color: $text;
-                    margin-left: 8px;
-                    transition: transform 0.5s;
-                    transform: scale(1, 1);
-
-                    &:hover {
-                        transition: transform 0.5s;
-                        transform: scale(1.5, 1.5);
-                    }
                 }
             }
         }

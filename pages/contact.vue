@@ -9,7 +9,13 @@
       </Head>
       <div class="main_div">
         <Header />
-        
+        <ContactForm 
+          question="
+            Alright, I have decided I want to learn more 
+            about the benefits of having my own website. 
+            What is the next step?
+          "
+        />
       </div>
     </main>
 
