@@ -1,10 +1,4 @@
 
-<script lang="ts">
-
-    import { ProjectData } from '~/components/Projects.vue';
-
-</script>
-
 <template>
 
     <main class="main_0">
