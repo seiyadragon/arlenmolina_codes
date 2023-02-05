@@ -43,10 +43,8 @@
             Español. 🇨🇺
           "
         />
+        <Footer />
       </div>
-      <footer>
-
-      </footer>
     </main>
 
 </template>
@@ -96,8 +94,6 @@
         margin-left: 96px;
         margin-right: 96px;
       }
-
-      padding-bottom: 16px;
     }
 
     .contact-bborder {
@@ -105,18 +101,6 @@
       background-color: $border;
       margin-left: -10px;
       margin-right: -10px;
-
-      
-    }
-
-    footer {
-      background-color: $border;
-      min-height: 100px;
-
-      @media (min-width: 600px) {
-        margin-left: 96px;
-        margin-right: 96px;
-      }
     }
 
 </style>

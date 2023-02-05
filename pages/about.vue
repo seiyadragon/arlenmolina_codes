@@ -32,6 +32,7 @@
                 perfectly.
             `}"
         />
+        <Footer />
       </div>
     </main>
 

@@ -16,6 +16,7 @@
             What is the next step?
           "
         />
+        <Footer />
       </div>
     </main>
 
@@ -32,6 +33,10 @@
       vertical-align: baseline;
       background: transparent;
       font-family: 'Ubuntu';
+    }
+
+    .main_div {
+      height: 200%;
     }
 
 </style>

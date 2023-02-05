@@ -25,7 +25,6 @@
         justify-self: end;
         margin-left: auto;
         margin-right: 4px;
-        align-self: center;
         padding: 0;
 
         .social-link {
@@ -34,13 +33,17 @@
             margin-left: 0px;
             margin-right: 0px;
             transition: transform 1s;
-            transform: scale(1, 1);
-            padding-left: 4px;
-            padding-right: 4px;
+            padding-left: 0px;
+            padding-right: 0px;
+            padding-top: 4px;
+            padding-bottom: 4px;
 
             &:hover {
                 transition: transform 1s;
                 transform: scale(1.25, 1.25);
+
+                padding-top: 4px;
+                padding-bottom: 4px;
             }
         }
     }

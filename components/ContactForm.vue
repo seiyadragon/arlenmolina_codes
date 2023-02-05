@@ -7,6 +7,11 @@
         props: ['question'],
         methods: {
             onSubmit() {
+                if (this.formData.name === "" || this.formData.email === "" || this.formData.business === "") {
+                    alert("Please fill out all required fields!")
+                    return
+                }
+
                 
             },
             onInputValueChange({label, value}: TextInputData) {
@@ -51,9 +56,9 @@
         <TextMessage :isResponse="true" class="message">
             <h1>Tell us about you!</h1>
             <form>
-                <TextInput label="Name:" placeholder="Type your full name." @valueChanged="onInputValueChange"/>
-                <TextInput label="Email:" placeholder="Type your email." @valueChanged="onInputValueChange"/>
-                <TextInput label="Business:" placeholder="What do you do?" @valueChanged="onInputValueChange"/>
+                <TextInput label="Name:" placeholder="Type your full name." @valueChanged="onInputValueChange" :required="true"/>
+                <TextInput label="Email:" placeholder="Type your email." @valueChanged="onInputValueChange" :required="true"/>
+                <TextInput label="Business:" placeholder="What do you do?" @valueChanged="onInputValueChange" :required="true"/>
                 <TextInput label="Website:" placeholder="Type your site URL." @valueChanged="onInputValueChange"/>
                 <TextInput label="Anything else:" placeholder="Anything else you'd like to let me know." @valueChanged="onInputValueChange"/>
             </form>

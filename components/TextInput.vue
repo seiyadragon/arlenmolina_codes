@@ -2,7 +2,7 @@
 <script lang="ts">
 
     export default {
-        props: ['label', 'placeholder'],
+        props: ['label', 'placeholder', 'required'],
         data() {
             return {
                 value: ""
@@ -22,6 +22,7 @@
     <div class="body">
         <label>{{ label }}</label>
         <input type="text" class="text-input" :placeholder="placeholder" v-model="value" @change="$emit('valueChanged', {label: label, value: value})">
+        <span class="required" v-if="required">*</span>
     </div>
 
 </template>
@@ -40,6 +41,13 @@
         .text-input {
           border-bottom: 2px solid $text;
           max-width: 100%;
+        }
+
+        .required {
+            position: absolute;
+            left: 12px;
+            color: purple;
+            font-size: 24px;
         }
     }
 
