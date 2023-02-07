@@ -12,7 +12,43 @@
                     return
                 }
 
-                
+                let myHeaders = new Headers();
+                myHeaders.append("Content-Type", "application/json");
+
+                let requestOptions2: RequestInit = {
+                    method: "post",
+                    headers: myHeaders,
+                    redirect: "follow",
+                    body: JSON.stringify({
+                        "fields":[
+                            {
+                                "field":"name",
+                                "value":this.formData.name
+                            },
+                            {
+                                "field":"email",
+                                "value":this.formData.email
+                            },
+                            {
+                                "field":"business",
+                                "value":this.formData.business
+                            },
+                            {
+                                "field":"website",
+                                "value":this.formData.website
+                            },
+                            {
+                                "field":"extra",
+                                "value":this.formData.extra
+                            },
+                        ]
+                    })
+                }
+
+                fetch(`https://v1.nocodeapi.com/seiyadragon/nForms/${process.env.NCF_NAME}/data`, requestOptions2)
+                    .then(response => response.text())
+                    .then(result => console.log(result))
+                    .catch(error => console.log('error', error));
             },
             onInputValueChange({label, value}: TextInputData) {
                 if (label === "Name:") 

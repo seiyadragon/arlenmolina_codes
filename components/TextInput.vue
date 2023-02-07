@@ -2,7 +2,7 @@
 <script lang="ts">
 
     export default {
-        props: ['label', 'placeholder', 'required'],
+        props: ['label', 'placeholder', 'required', 'type'],
         data() {
             return {
                 value: ""
@@ -21,7 +21,7 @@
 
     <div class="body">
         <label>{{ label }}</label>
-        <input type="text" class="text-input" :placeholder="placeholder" v-model="value" @change="$emit('valueChanged', {label: label, value: value})">
+        <input :type="type !== undefined ? type : 'text'" class="text-input" :placeholder="placeholder" v-model="value" @change="$emit('valueChanged', {label: label, value: value})">
         <span class="required" v-if="required">*</span>
     </div>
 

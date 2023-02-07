@@ -21,9 +21,15 @@
             text-align: center;
         }
     
-        &:deep(p), &:deep(form), &:deep(img), &:deep(a) {
+        &:deep(p), &:deep(form), &:deep(img), &:deep(a), &:deep(label) {
             padding-left: 32px;
             padding-right: 32px;
+            font-size: 18px;
+        }
+
+        &:deep(input) {
+            margin-left: 32px;
+            margin-right: 32px;
             font-size: 18px;
         }
     
