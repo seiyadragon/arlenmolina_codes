@@ -4,4 +4,9 @@ export default {
   googleAnalytics: {
     id: 'G-EZTSQPPMFJ'
   },
-};
+  runtimeConfig: {
+    public: {
+      ncfName: process.env.NCFNAME,
+    }
+  }
+}

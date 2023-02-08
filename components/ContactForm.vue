@@ -2,6 +2,7 @@
 <script lang="ts">
 
     import { TextInputData } from './TextInput.vue';
+    import { useRuntimeConfig } from '../node_modules/nuxt/dist/app'
 
     export default {
         props: ['question'],
@@ -45,7 +46,7 @@
                     })
                 }
 
-                fetch(`https://v1.nocodeapi.com/seiyadragon/nForms/${process.env.NCF_NAME}/data`, requestOptions2)
+                fetch(`https://v1.nocodeapi.com/seiyadragon/nForms/${this.config.ncfName}/data`, requestOptions2)
                     .then(response => response.text())
                     .then(result => console.log(result))
                     .catch(error => console.log('error', error));
@@ -76,6 +77,7 @@
                     website: "",
                     extra: ""
                 },
+                config: useRuntimeConfig(),
             }
         },
     }
@@ -85,11 +87,11 @@
 <template>
 
     <TextMessageContainer>
-        <TextMessage :isResponse="false" class="message">
+        <TextMessage :isResponse="false">
             <h1>Now what?</h1>
             <p>{{ question }}</p>
         </TextMessage>
-        <TextMessage :isResponse="true" class="message">
+        <TextMessage :isResponse="true">
             <h1>Tell us about you!</h1>
             <form>
                 <TextInput label="Name:" placeholder="Type your full name." @valueChanged="onInputValueChange" :required="true"/>
@@ -99,14 +101,14 @@
                 <TextInput label="Anything else:" placeholder="Anything else you'd like to let me know." @valueChanged="onInputValueChange"/>
             </form>
         </TextMessage>
-        <TextMessage :isResponse="true" class="message">
+        <TextMessage :isResponse="true">
             <div class="link-container">
                 <NuxtLink @click="onSubmit">
                     Submit
                 </NuxtLink>
             </div>
         </TextMessage>
-        <TextMessage :isResponse="true" class="message">
+        <TextMessage :isResponse="true">
             <div class="link-container">
                 <NuxtLink href="/">
                     Back
