@@ -52,8 +52,9 @@
 <style lang="scss">
 
     $background: rgb(255, 255, 255);
+    $background-trans: rgb(255, 255, 255, 0.9);
     $background-inner: lighten($background, 100%);
-    $border: darken($background, 10%);
+    $border: darken($background, 20%);
 
     * {
         margin: 0;
@@ -81,10 +82,12 @@
 
     .main_0 {
       background-color: $background;
+
+      background-image: url(/peaks.svg);
     }
 
     .main_div {
-      background-color: $background;
+      background-color: $background-trans;
       border-left: solid 8px $border;
       border-right: solid 8px $border;
       padding-left: 8px;
