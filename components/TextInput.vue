@@ -41,6 +41,10 @@
         .text-input {
           border-bottom: 2px solid $text;
           max-width: 100%;
+          
+          &::placeholder {
+            color: $text
+          }
         }
 
         .required {

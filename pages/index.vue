@@ -1,6 +1,42 @@
 
 
+<script lang="ts">
+
+  export default {
+    mounted: function () {
+      if (process.client) {
+        var drk = localStorage.getItem("isDark")
+        var drk2: string = drk != null ? drk : "false"
+
+        this.isDark = this.stringToBool(drk2)
+      }
+    },
+    data() {
+      return {
+        isDark: false
+      }
+    },
+    methods: {
+      stringToBool(str: string) {
+        if (str === "true") 
+          return true
+
+        return false
+      },
+      darkToggle(dark: boolean) {
+        this.isDark = dark
+    
+        if (process.client)
+          localStorage.setItem("isDark", this.isDark.toString())
+      }
+    }
+  }
+
+</script>
+
 <template>
+
+  <div :class="isDark ? 'dark' : 'light'">
     <main class="main_0">
       <Head>
         <title>Arlen Molina -- Web developer</title>
@@ -43,9 +79,10 @@
             Español. 🇨🇺
           "
         />
-        <Footer />
+        <Footer @light-mode="darkToggle(false)" @dark-mode="darkToggle(true)"/>
       </div>
     </main>
+  </div>
 
 </template>
 
@@ -55,6 +92,11 @@
     $background-trans: rgb(255, 255, 255, 0.9);
     $background-inner: lighten($background, 100%);
     $border: darken($background, 20%);
+
+    $background-dark: lighten(invert($background), 20%);
+    $background-trans-dark: lighten(invert($background-trans), 20%);
+    $background-inner-dark: lighten(invert($background-inner), 20%);
+    $border-dark: lighten(invert($border), 20%);
 
     * {
         margin: 0;
@@ -80,30 +122,61 @@
       background-color: gold;
     }
 
-    .main_0 {
-      background-color: $background;
-
-      background-image: url(/peaks.svg);
-    }
-
-    .main_div {
-      background-color: $background-trans;
-      border-left: solid 8px $border;
-      border-right: solid 8px $border;
-      padding-left: 8px;
-      padding-right: 8px;
-
-      @media (min-width: 600px) {
-        margin-left: 96px;
-        margin-right: 96px;
+    .light {
+      .main_0 {
+        background-color: $background;
+  
+        background-image: url(/peaks.svg);
+      }
+  
+      .main_div {
+        background-color: $background-trans;
+        border-left: solid 8px $border;
+        border-right: solid 8px $border;
+        padding-left: 8px;
+        padding-right: 8px;
+  
+        @media (min-width: 600px) {
+          margin-left: 96px;
+          margin-right: 96px;
+        }
+      }
+  
+      .contact-bborder {
+        height: 2px;
+        background-color: $border;
+        margin-left: -10px;
+        margin-right: -10px;
       }
     }
 
-    .contact-bborder {
-      height: 2px;
-      background-color: $border;
-      margin-left: -10px;
-      margin-right: -10px;
+    .dark {
+      .main_0 {
+        background-color: $background-dark;
+  
+        background-image: url(/peaks.svg);
+      }
+  
+      .main_div {
+        background-color: $background-trans-dark;
+        border-left: solid 8px $border-dark;
+        border-right: solid 8px $border-dark;
+        padding-left: 8px;
+        padding-right: 8px;
+  
+        @media (min-width: 600px) {
+          margin-left: 96px;
+          margin-right: 96px;
+        }
+      }
+  
+      .contact-bborder {
+        height: 2px;
+        background-color: $border-dark;
+        margin-left: -10px;
+        margin-right: -10px;
+      }
     }
+
 
 </style>

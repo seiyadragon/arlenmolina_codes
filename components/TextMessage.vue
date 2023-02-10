@@ -2,7 +2,7 @@
 <script lang="ts">
 
     export default {
-        props: ['isResponse']
+        props: ['isResponse', 'isDark']
     }
 
 </script>
@@ -12,7 +12,9 @@
 
     <section :class="isResponse ? 'contact' : 'question'">
         <div class="body">
-            <slot class="slot"/>
+            <div :class="isDark ? 'dark' : 'light'">
+                <slot class="slot"/>
+            </div>
         </div>
     </section>
 
@@ -24,6 +26,7 @@
     $border: darken($background, 10%);
 
     $text: rgb(54, 54, 54);
+    $text-dark: invert($text); 
 
     .question {
         justify-self: right;
@@ -50,7 +53,13 @@
         border-bottom-right-radius: 32px;
         border-bottom-left-radius: 32px;
 
-        color: $text;
+        .light {
+            color: $text;
+        }
+
+        .dark {
+            color: $text-dark;
+        }
     }
 
     .body {

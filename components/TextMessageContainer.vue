@@ -13,8 +13,6 @@
     $background: rgba(214, 84, 9, 0.8);
     $border: darken($background, 10%);
 
-    $text: rgb(54, 54, 54);
-
     .message-wrapper {
         &:deep(h1) {
             font-size: 24px;

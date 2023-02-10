@@ -1,7 +1,43 @@
 
+<script lang="ts">
+
+  import {ref} from 'vue'
+  
+  export default {
+    mounted: function () {
+      if (process.client) {
+        var drk = localStorage.getItem("isDark")
+        var drk2: string = drk != null ? drk : "false"
+      
+        this.isDark = this.stringToBool(drk2)
+      }
+    },
+    data() {
+      return {
+        isDark: false
+      }
+    },
+    methods: {
+      stringToBool(str: string) {
+        if (str === "true") 
+          return true
+      
+        return false
+      },
+      darkToggle(dark: boolean) {
+        this.isDark = dark
+      
+        if (process.client)
+          localStorage.setItem("isDark", this.isDark.toString())
+      }
+    }
+  }
+
+</script>
 
 <template>
 
+  <div :class="isDark ? 'dark' : 'light'">
     <main class="main_0">
       <Head>
         <title>Arlen Molina -- Contact</title>
@@ -16,9 +52,10 @@
             What is the next step?
           "
         />
-        <Footer />
+        <Footer @light-mode="darkToggle(false)" @dark-mode="darkToggle(true)"/>
       </div>
     </main>
+  </div>
 
 </template>
 

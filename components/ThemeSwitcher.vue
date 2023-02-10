@@ -1,0 +1,33 @@
+
+<template>
+
+    <section class="theme-selector">
+        <div class="buttons">
+            <TextMessageContainer>
+                <div class="link-container">
+                    <NuxtLink @click="$emit('light-mode')">Light mode</NuxtLink>
+                </div>
+            </TextMessageContainer>
+            <TextMessageContainer>
+                <div class="link-container">
+                    <NuxtLink @click="$emit('dark-mode')">Dark mode</NuxtLink>
+                </div>
+            </TextMessageContainer>
+        </div>
+    </section>
+
+</template>
+
+<style lang="scss" scoped>
+
+    .theme-selector {
+        padding-top: 16px;
+        padding-bottom: 16px;
+
+        .buttons {
+            display: flex;
+            justify-content: space-evenly;
+        }
+    }
+
+</style>
