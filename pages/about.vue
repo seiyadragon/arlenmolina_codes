@@ -44,8 +44,8 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
       </Head>
       <div class="main_div">
-        <Header />
-        <Projects 
+        <Header :isDark="isDark" />
+        <Projects :isDark="isDark" 
             question="
                 Can you show me some of the projects you've worked on?
             "
@@ -69,7 +69,7 @@
                 perfectly.
             `}"
         />
-        <Footer @light-mode="darkToggle(false)" @dark-mode="darkToggle(true)"/>
+        <Footer @light-mode="darkToggle(false)" @dark-mode="darkToggle(true)" :isDark="isDark"/>
       </div>
     </main>
   </div>

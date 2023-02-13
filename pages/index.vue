@@ -43,8 +43,8 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
       </Head>
       <div class="main_div">
-        <Header />
-        <Contact 
+        <Header :isDark="isDark"/>
+        <Contact :isDark="isDark"
           question="
             I'm finally starting to grow an audience, 
             but I'm looking to expand my business with 
@@ -60,7 +60,7 @@
             happen!
           "
         />
-        <About 
+        <About :isDark="isDark"
           question="
             Alright! Tell me a little about yourself, your experience,
             projects you've worked on, etc...
@@ -79,7 +79,7 @@
             Español. 🇨🇺
           "
         />
-        <Footer @light-mode="darkToggle(false)" @dark-mode="darkToggle(true)"/>
+        <Footer @light-mode="darkToggle(false)" @dark-mode="darkToggle(true)" :isDark="isDark"/>
       </div>
     </main>
   </div>

@@ -1,8 +1,15 @@
 
+<script lang="ts">
+
+    export default {
+        props: ['isDark']
+    }
+
+</script>
 
 <template>
 
-    <div class="links">
+    <div :class="isDark ? 'dark' : 'light'">
         <NuxtLink href="https://www.linkedin.com/in/arlen-molina-423159183/" class="social-link">
             <Icon name="uil:linkedin" />
         </NuxtLink>
@@ -19,8 +26,9 @@
 <style lang="scss" scoped>
 
     $text: rgb(54, 54, 54);
+    $text-dark: lighten(invert($text), 50%); 
 
-    .links {
+    .dark, .light {
         display: flex;
         justify-self: end;
         margin-left: auto;
@@ -29,23 +37,25 @@
 
         .social-link {
             font-size: 42px;
-            color: $text;
-            margin-left: 0px;
-            margin-right: 0px;
+            margin-left: 4px;
+            margin-right: 4px;
             transition: transform 1s;
             padding-left: 0px;
             padding-right: 0px;
-            padding-top: 4px;
-            padding-bottom: 4px;
 
             &:hover {
                 transition: transform 1s;
-                transform: scale(1.25, 1.25);
-
-                padding-top: 4px;
-                padding-bottom: 4px;
+                transform: scale(1.1, 1.1);
             }
         }
+    }
+
+    .light .social-link {
+        color: $text;
+    }
+
+    .dark .social-link {
+        color: $text-dark;
     }
 
 </style>

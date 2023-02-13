@@ -26,7 +26,7 @@
     $border: darken($background, 10%);
 
     $text: rgb(54, 54, 54);
-    $text-dark: invert($text); 
+    $text-dark: lighten(invert($text), 50%); 
 
     .question {
         justify-self: right;

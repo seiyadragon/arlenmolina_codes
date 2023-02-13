@@ -44,15 +44,15 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
       </Head>
       <div class="main_div">
-        <Header />
-        <ContactForm 
+        <Header :isDark="isDark"/>
+        <ContactForm :isDark="isDark"
           question="
             Alright, I have decided I want to learn more 
             about the benefits of having my own website. 
             What is the next step?
           "
         />
-        <Footer @light-mode="darkToggle(false)" @dark-mode="darkToggle(true)"/>
+        <Footer @light-mode="darkToggle(false)" @dark-mode="darkToggle(true)" :isDark="isDark"/>
       </div>
     </main>
   </div>

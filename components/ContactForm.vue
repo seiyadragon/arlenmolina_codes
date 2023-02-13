@@ -5,7 +5,7 @@
     import { useRuntimeConfig } from '../node_modules/nuxt/dist/app'
 
     export default {
-        props: ['question'],
+        props: ['question', 'isDark'],
         methods: {
             onSubmit() {
                 if (this.formData.name === "" || this.formData.email === "" || this.formData.business === "") {
@@ -87,11 +87,11 @@
 <template>
 
     <TextMessageContainer>
-        <TextMessage :isResponse="false">
+        <TextMessage :isResponse="false" :isDark="isDark">
             <h1>Now what?</h1>
             <p>{{ question }}</p>
         </TextMessage>
-        <TextMessage :isResponse="true">
+        <TextMessage :isResponse="true" :isDark="isDark">
             <h1>Tell us about you!</h1>
             <form>
                 <TextInput label="Name:" placeholder="Type your full name." @valueChanged="onInputValueChange" :required="true"/>
@@ -101,16 +101,16 @@
                 <TextInput label="Anything else:" placeholder="Anything else you'd like to let me know." @valueChanged="onInputValueChange"/>
             </form>
         </TextMessage>
-        <TextMessage :isResponse="true">
+        <TextMessage :isResponse="true" :isDark="isDark">
             <div class="link-container">
-                <NuxtLink @click="onSubmit">
+                <NuxtLink @click="onSubmit" :class="isDark ? 'dark' : 'light'">
                     Submit
                 </NuxtLink>
             </div>
         </TextMessage>
-        <TextMessage :isResponse="true">
+        <TextMessage :isResponse="true" :isDark="isDark">
             <div class="link-container">
-                <NuxtLink href="/">
+                <NuxtLink href="/" :class="isDark ? 'dark' : 'light'">
                     Back
                 </NuxtLink>
             </div>

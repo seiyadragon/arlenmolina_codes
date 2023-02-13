@@ -1,15 +1,22 @@
 
+<script lang="ts">
+
+    export default {
+        props: ['isDark']
+    }
+
+</script>
 
 <template>
 
     <header class="header_0">
         <section class="profile">
             <img src="https://pbs.twimg.com/profile_images/1619633162962837504/ysIVwrUR_400x400.jpg" alt="Profile Picture">
-            <div class="name">
+            <div :class="isDark ? 'dark' : 'light'">
                 <h1>Arlen Molina</h1>
                 <h2>Web Developer</h2>
             </div>
-            <Links />
+            <Links :isDark="isDark"/>
         </section>
     </header>
 
@@ -21,11 +28,11 @@
     $border: darken($background, 10%);
 
     $text: rgb(54, 54, 54);
+    $text-dark: lighten(invert($text), 50%); 
 
     .header_0 {
         background-color: $background;
         backdrop-filter: blur(3px);
-        color: $text;
         margin-top: 0%;
         border-bottom: 8px solid $border;
         border-bottom-right-radius: 32px;
@@ -48,7 +55,7 @@
                 padding-right: 4px;
             }
             
-            .name {
+            .light, .dark {
                 height: 48px;
                 padding: 0px;
 
@@ -61,6 +68,14 @@
                     font-size: 24px;
                     margin-bottom: 2px;
                 }
+            }
+
+            .light {
+                color: $text;
+            }
+
+            .dark {
+                color: $text-dark;
             }
         }
     }

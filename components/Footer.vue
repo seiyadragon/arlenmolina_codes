@@ -1,14 +1,22 @@
 
+<script lang="ts">
+
+    export default {
+      props: ['isDark']
+    }
+
+</script>
+
 
 <template>
 
     <footer class="page-footer">
-      <div class="footer-links">
+      <div :class="isDark ? 'dark' : 'light'">
         <NuxtLink href="/" class="link">Home</NuxtLink>
         <NuxtLink href="/contact" class="link">Contact</NuxtLink>
         <NuxtLink href="/about" class="link">About</NuxtLink>
       </div>
-      <ThemeSwitcher @light-mode="$emit('light-mode')" @dark-mode="$emit('dark-mode')"/>
+      <ThemeSwitcher @light-mode="$emit('light-mode')" @dark-mode="$emit('dark-mode')" :isDark="isDark"/>
     </footer>
 
 </template>
@@ -26,7 +34,6 @@
       backdrop-filter: blur(3px);
       padding-left: 32px;
       padding-right: 32px;
-      color: $text;
       font-size: 24px;
       flex-wrap: wrap;
 
@@ -36,21 +43,32 @@
 
       margin-top: 102px;
 
-      .footer-links {
+      .light, .dark {
         display: flex;
         flex-direction: row;
+        color: $text;
 
         justify-content: space-between;
 
         padding-top: 16px;
+        .link {
+          margin-top: auto;
+          margin-bottom: auto;
+        }
       }
 
-      .link {
-        margin-top: auto;
-        margin-bottom: auto;
-
-        color: rgb(99, 0, 102);
+      .light {
+        .link {
+          color: rgb(0, 0, 200);
+        }
       }
+
+      .dark {
+        .link {
+          color: rgb(125, 15, 255);
+        }
+      }
+
     }
 
 </style>
