@@ -10,7 +10,7 @@
 
 <template>
 
-    <footer class="page-footer">
+    <footer class="page-footer" :class="isDark ? 'dark-footer' : 'light-footer'">
       <div :class="isDark ? 'dark' : 'light'">
         <NuxtLink href="/" class="link">Home</NuxtLink>
         <NuxtLink href="/contact" class="link">Contact</NuxtLink>
@@ -25,6 +25,7 @@
 
     $background: rgba(214, 84, 9, 0.8);
     $border: lighten($background, 30%);
+    $border-dark: lighten($background, 10%);
 
     $text: rgb(54, 54, 54);
 
@@ -36,10 +37,6 @@
       padding-right: 32px;
       font-size: 24px;
       flex-wrap: wrap;
-
-      border-top-right-radius: 32px;
-      border-top-left-radius: 32px;
-      border-top: 8px solid $border;
 
       margin-top: 102px;
 
@@ -69,6 +66,18 @@
         }
       }
 
+    }
+
+    .light-footer {
+      border-top: 8px solid $border;
+      border-top-right-radius: 32px;
+      border-top-left-radius: 32px;
+    }
+
+    .dark-footer {
+      border-top: 8px solid $border-dark;
+      border-top-right-radius: 32px;
+      border-top-left-radius: 32px;
     }
 
 </style>

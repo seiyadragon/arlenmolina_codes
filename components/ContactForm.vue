@@ -94,11 +94,11 @@
         <TextMessage :isResponse="true" :isDark="isDark">
             <h1>Tell us about you!</h1>
             <form>
-                <TextInput label="Name:" placeholder="Type your full name." @valueChanged="onInputValueChange" :required="true"/>
-                <TextInput label="Email:" placeholder="Type your email." @valueChanged="onInputValueChange" :required="true"/>
-                <TextInput label="Business:" placeholder="What do you do?" @valueChanged="onInputValueChange" :required="true"/>
-                <TextInput label="Website:" placeholder="Type your site URL." @valueChanged="onInputValueChange"/>
-                <TextInput label="Anything else:" placeholder="Anything else you'd like to let me know." @valueChanged="onInputValueChange"/>
+                <TextInput label="Name:" placeholder="Type your full name." @valueChanged="onInputValueChange" :required="true" :isDark="isDark"/>
+                <TextInput label="Email:" placeholder="Type your email." @valueChanged="onInputValueChange" :required="true" :isDark="isDark"/>
+                <TextInput label="Business:" placeholder="What do you do?" @valueChanged="onInputValueChange" :required="true" :isDark="isDark"/>
+                <TextInput label="Website:" placeholder="Type your site URL." @valueChanged="onInputValueChange" :isDark="isDark"/>
+                <TextInput label="Anything else:" placeholder="Anything else you'd like to let me know." @valueChanged="onInputValueChange" :isDark="isDark"/>
             </form>
         </TextMessage>
         <TextMessage :isResponse="true" :isDark="isDark">

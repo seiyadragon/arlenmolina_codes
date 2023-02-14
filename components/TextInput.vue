@@ -2,7 +2,7 @@
 <script lang="ts">
 
     export default {
-        props: ['label', 'placeholder', 'required', 'type'],
+        props: ['label', 'placeholder', 'required', 'type', 'isDark'],
         data() {
             return {
                 value: ""
@@ -19,7 +19,7 @@
 
 <template>
 
-    <div class="body">
+    <div class="body" :class="isDark ? 'dark' : 'light'">
         <label>{{ label }}</label>
         <input :type="type !== undefined ? type : 'text'" class="text-input" :placeholder="placeholder" v-model="value" @change="$emit('valueChanged', {label: label, value: value})">
         <span class="required" v-if="required">*</span>
@@ -30,6 +30,7 @@
 <style lang="scss" scoped>
 
     $text: rgb(54, 54, 54);
+    $text-dark: lighten(invert($text), 50%); 
 
     .body {
         padding-top: 4px;
@@ -39,12 +40,7 @@
         flex-direction: column;
 
         .text-input {
-          border-bottom: 2px solid $text;
           max-width: 100%;
-          
-          &::placeholder {
-            color: $text
-          }
         }
 
         .required {
@@ -52,6 +48,28 @@
             left: 12px;
             color: purple;
             font-size: 24px;
+        }
+    }
+
+    .dark {
+        .text-input {
+            color: $text-dark;
+            border-bottom: 2px solid $text-dark;
+
+            &::placeholder {
+                color: $text-dark;
+            }
+        }
+    }
+
+    .light {
+        .text-input {
+            color: $text;
+            border-bottom: 2px solid $text;
+
+            &::placeholder {
+                color: $text;
+            }
         }
     }
 

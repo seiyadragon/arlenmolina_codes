@@ -9,7 +9,7 @@
 
 <template>
 
-    <header class="header_0">
+    <header class="header_0" :class="isDark ? 'header-dark' : 'header-light'">
         <section class="profile">
             <img src="https://pbs.twimg.com/profile_images/1619633162962837504/ysIVwrUR_400x400.jpg" alt="Profile Picture">
             <div :class="isDark ? 'dark' : 'light'">
@@ -26,6 +26,7 @@
 
     $background: rgba(214, 84, 9, 0.8);
     $border: darken($background, 10%);
+    $border-dark: darken($background, 20%);
 
     $text: rgb(54, 54, 54);
     $text-dark: lighten(invert($text), 50%); 
@@ -34,7 +35,6 @@
         background-color: $background;
         backdrop-filter: blur(3px);
         margin-top: 0%;
-        border-bottom: 8px solid $border;
         border-bottom-right-radius: 32px;
         border-bottom-left-radius: 32px;
         position: sticky;
@@ -78,6 +78,14 @@
                 color: $text-dark;
             }
         }
+    }
+
+    .header-light {
+        border-bottom: 8px solid $border;
+    }
+
+    .header-dark {
+        border-bottom: 8px solid $border-dark;
     }
 
 </style>

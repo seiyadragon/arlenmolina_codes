@@ -34,9 +34,10 @@
         margin-left: auto;
         margin-right: 4px;
         padding: 0;
+        min-width: 132px;
 
         .social-link {
-            font-size: 42px;
+            font-size: 36px;
             margin-left: 4px;
             margin-right: 4px;
             transition: transform 1s;

@@ -38,7 +38,7 @@
 <template>
 
   <div :class="isDark ? 'dark' : 'light'">
-    <main class="main_0">
+    <main class="main_0" id="main_0">
       <Head>
         <title>Arlen Molina -- Contact</title>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
