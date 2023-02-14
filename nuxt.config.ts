@@ -1,9 +1,7 @@
 export default {
   buildModules: ['@nuxt/typescript-build', '@nuxtjs/google-analytics'],
   modules: ['nuxt-icon'],
-  googleAnalytics: {
-    id: 'G-EZTSQPPMFJ'
-  },
+  plugins: [{ src: '~/plugins/vercel.ts', mode: 'client' }],
   runtimeConfig: {
     public: {
       ncfName: process.env.NCFNAME,
