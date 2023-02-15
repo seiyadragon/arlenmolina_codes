@@ -41,6 +41,17 @@
       <Head>
         <title>Arlen Molina -- Web developer</title>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="robots" content="index, contact, about">
+
+        <meta name="description" content="
+          Check out my portfolio website, where I showcase my experience as a web developer. 
+          Learn more about my skills, and find out how to contact me to bring your own web development vision to life.
+        ">
       </Head>
       <div class="main_div">
         <Header :isDark="isDark"/>
